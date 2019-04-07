@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="Login">
+    <classes>
+      <class name="xamplifyLive.Login"/>
+    </classes>
+  </test>
+<!--   <test name="ManagePartners">
+    <classes>
+      <class name="xamplifyLive.ManagePartners"/>
+    </classes>
+  </test>  -->
+  
+<!--  <test name="EmailCampaign">
+    <classes>
+      <class name="xamplifyLive.EmailCampaign"/>
+    </classes>
+  </test>  -->
+    <test name="Team">
+    <classes>
+      <class name="xamplifyLive.Team"/>
+    </classes>
+  </test>   
+  <!-- <test name="VideoCampaign">
+    <classes>
+      <class name="xamplifyLive.VideoCampaign"/>
+    </classes>
+  </test>  
+  <test name="ManageCampagins">
+    <classes>
+      <class name="xamplifyLive.ManageCampagins"/>
+    </classes>
+  </test>  -->
+   
+  <!-- <test name="EmailTemplate">
+    <classes>
+      <class name="xamplifyLive.EmailTemplate"/>
+    </classes>
+  </test>  -->
+   <!-- Test -->
+</suite> <!-- Suite -->
