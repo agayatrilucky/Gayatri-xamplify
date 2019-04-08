@@ -3,17 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="xamplifyLive.EmailCampaign">
+      <class name="xamplifyLive.Team">
         <methods>
-          <include name="email_now"/>
-          <include name="email_savetest1"/>
-          <include name="email_schedule"/>
-          <include name="ecampaign"/>
-          <include name="email_now1"/>
-          <include name="email_savetest"/>
-          <include name="email_schedule1"/>
+          <include name="team"/>
         </methods>
-      </class> <!-- xamplifyLive.EmailCampaign -->
+      </class> <!-- xamplifyLive.Team -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
