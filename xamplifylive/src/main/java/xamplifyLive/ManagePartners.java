@@ -76,12 +76,6 @@ public void managePartners() throws InterruptedException, SQLException, IOExcept
 	
 	}
 
- 	
- 	
- 	
- 	
- 	
-
  	driver.findElement(By.xpath(prop.getProperty("mp_saveas_plist_save"))).click();
  	Thread.sleep(5000);
 

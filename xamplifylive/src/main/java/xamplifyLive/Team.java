@@ -12,8 +12,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class Team {
@@ -27,12 +29,20 @@ public void team() throws InterruptedException, IOException, SQLException
 {
 	
 	//driver.get("https://release.xamplify.io/home/dashboard/welcome");
-	FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+	/*FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 	        .withTimeout(30, TimeUnit.SECONDS)
 	        .pollingEvery(5, TimeUnit.SECONDS)
-	        .ignoring(NoSuchElementException.class);
+	        .ignoring(NoSuchElementException.class);*/
+	
+	WebDriverWait wait=new WebDriverWait(driver,20);
 	 
-	driver.findElement(By.xpath(properties.getProperty("vteam"))).click();
+	 
+	 
+	// Wait till the element is not visible
+	 
+	WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("vteam"))));
+	element.click();
+	//driver.findElement(By.xpath(properties.getProperty("vteam"))).click();
 	Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("vdwnld_tmplte"))).click();
 		driver.findElement(By.xpath(properties.getProperty("vadd_member"))).click();
@@ -55,47 +65,23 @@ public void team() throws InterruptedException, IOException, SQLException
 		Thread.sleep(5000);
 		if(campaignNames.indexOf(campaignNameFromProp)>-1) {
 			driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).clear();
-			driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).sendKeys(properties.getProperty("vmail")+"_"+System.currentTimeMillis());	
+		
+			
+			
+			
+			driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).sendKeys(System.currentTimeMillis()+"");
+			driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).sendKeys(properties.getProperty("vmail"));
+			
+			
+			
 		}
 		Thread.sleep(3000);	
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//Thread.sleep(5000);
-		/*
-		DatabaseQueries data = new DatabaseQueries();
-		String queryt = properties.getProperty("query.query.getteammails");
-		//.replaceAll(":emailId",properties.getProperty("user.name"));
-		List<String> campaignNames = data.listNames(queryt, "email_id");
-		String campaignNameFromProp = properties.getProperty("vmail").toLowerCase();
-		
-		driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).sendKeys(properties.getProperty("vmail"));	
-
-		Thread.sleep(5000);
-		if(campaignNames.indexOf(campaignNameFromProp)>-1) {
-		driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).clear();
-		driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).sendKeys("vmail"+"_"+System.currentTimeMillis());
-		Thread.sleep(10000);
-		}*/
-			
 	
 		
 		
-	//	driver.findElement(By.xpath(properties.getProperty("vtm_mail"))).sendKeys("gabcd@gmail11.com");
-		
-		
-		
-		
-		
 		driver.findElement(By.xpath(properties.getProperty("vtm_mail_add"))).click();
-		Thread.sleep(15000);
+		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("vtm_checkall"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("vtm_save"))).click();
@@ -109,9 +95,6 @@ public void team() throws InterruptedException, IOException, SQLException
 	        driver.findElement(By.xpath(properties.getProperty("vtm_upldcustm_save"))).click();
 	        Thread.sleep(5000);
 	
-		
-		
-		
 		driver.findElement(By.xpath(properties.getProperty("vtm_delete"))).click();
 	
 				Select tdropdown = new Select(driver.findElement(By.xpath("//*[@id=\"org-id\"]")));
