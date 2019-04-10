@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
-  <test thread-count="5" name="Team(failed)">
+  <test thread-count="5" name="EventCampaign(failed)">
     <classes>
-      <class name="xamplifyLive.Team">
+      <class name="xamplifyLive.EventCampaign">
         <methods>
-          <include name="team"/>
+          <include name="evecampaign"/>
+          <include name="eve_now"/>
+          <include name="eve_schedule"/>
         </methods>
-      </class> <!-- xamplifyLive.Team -->
+      </class> <!-- xamplifyLive.EventCampaign -->
     </classes>
-  </test> <!-- Team(failed) -->
+  </test> <!-- EventCampaign(failed) -->
 </suite> <!-- Failed suite [Suite] -->
