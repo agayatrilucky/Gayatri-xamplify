@@ -148,15 +148,11 @@ import org.openqa.selenium.support.ui.Select;
 										
 										  */
 									driver.findElement(By.xpath(properties.getProperty("mc_preview"))).click();
-									Thread.sleep(5000);
+									Thread.sleep(9000);
 									driver.findElement(By.xpath(properties.getProperty("mc_preview_close"))).click();
 									Thread.sleep(5000);
 									
 									
-									 driver.findElement(By.xpath(properties.getProperty("msearchdata"))).sendKeys("video-28");
-										Thread.sleep(8000);
-										driver.findElement(By.xpath(properties.getProperty("msearchicon"))).click();
-										Thread.sleep(5000);
 										driver.findElement(By.xpath(properties.getProperty("mc_settingsicon"))).click();
 										Thread.sleep(5000);
 

@@ -268,11 +268,11 @@ else {
 			Thread.sleep(8000);
 			
 			JavascriptExecutor js1 = (JavascriptExecutor) driver;
-			  js1.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+			  js1.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 			  Thread.sleep(5000);
 
 				JavascriptExecutor js11 = (JavascriptExecutor) driver;
-				  js11.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+				  js11.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 				  Thread.sleep(8000);
 			driver.findElement(By.xpath(properties.getProperty("esrch_tmplt_slct_last"))).click();
 			Thread.sleep(11000);
@@ -280,6 +280,7 @@ else {
 			/*driver.findElement(By.xpath(properties.getProperty("esrch_tmplt_clck_clr_srch"))).click();
 			Thread.sleep(5000);
 			*/
+			
 			driver.findElement(By.xpath(properties.getProperty("eselect_template"))).click();
 			Thread.sleep(8000);
 			

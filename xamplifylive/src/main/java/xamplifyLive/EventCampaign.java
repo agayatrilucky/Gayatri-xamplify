@@ -105,7 +105,7 @@ public class EventCampaign {
 			
 			driver.findElement(By.xpath(properties.getProperty("eve_strt_selectdate_time"))).sendKeys("1");
 			
-			Thread.sleep(5000);
+			
 			driver.findElement(By.xpath(properties.getProperty("eve_endate"))).click();
 			
 			
@@ -114,6 +114,7 @@ public class EventCampaign {
 			Select eve_cntry=new Select(eve_drpdwn);
 		//	eve_cntry.selectByVisibleText("India");
 			eve_cntry.selectByValue("103");
+			Thread.sleep(5000);
 			
 			driver.findElement(By.xpath(properties.getProperty("eve_nextpage"))).click();
 			
@@ -212,7 +213,7 @@ public class EventCampaign {
 				driver.findElement(By.xpath(properties.getProperty("eve_tmplte_nxt"))).click();
 				 
 		
-		driver.findElement(By.xpath(properties.getProperty("eve_are"))).click();
+	/*	driver.findElement(By.xpath(properties.getProperty("eve_are"))).click();
 		
 		
 		
@@ -227,11 +228,11 @@ public class EventCampaign {
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='cke_wysiwyg_frame cke_reset']")));
 		driver.findElement(By.xpath("html/body")).click();
 		driver.switchTo().activeElement().sendKeys("plz open the mail:[email is not opened for eve] ");
-		
-		
-		Thread.sleep(5000);
-/*
 		driver.switchTo().defaultContent();
+		
+		Thread.sleep(5000);*/
+/*
+		
 		JavascriptExecutor js3 = (JavascriptExecutor) driver;
 		  js3.executeScript("window.scrollTo(document.body.scrollHeight,0)");
 		  
@@ -265,12 +266,12 @@ public class EventCampaign {
 
 		driver.switchTo().defaultContent();
 		*/
-
-
+		
+		
 		}
 		
 		
-@Test(priority=1)
+@Test(priority=1,enabled=true)
 public void eve_now() throws InterruptedException {
 
 	WebDriverWait waitnow=new WebDriverWait(driver,50);
@@ -283,14 +284,17 @@ public void eve_now() throws InterruptedException {
 		//driver.findElement(By.xpath(properties.getProperty("eve_now"))).click();
 		
 		driver.findElement(By.xpath(properties.getProperty("eve_launch"))).click();
+		Thread.sleep(5000);
+
+		
 		
 }
 
-@Test(priority=2)
-public void eve_schedule() throws InterruptedException {
+@Test(priority=2,enabled=true)
+public void eve_save() throws InterruptedException {
 
-	
-	WebDriverWait waitsave=new WebDriverWait(driver,20);
+	Thread.sleep(5000);
+	WebDriverWait waitsave=new WebDriverWait(driver,30);
 
 
 
@@ -299,11 +303,47 @@ public void eve_schedule() throws InterruptedException {
 	WebElement elements=waitsave.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("EVE_SAVE"))));
 	elements.click();
 	 	
-		//driver.findElement(By.xpath(properties.getProperty("EVE_SAVE"))).click();
+	//	driver.findElement(By.xpath(properties.getProperty("EVE_SAVE"))).click();
 		
 		driver.findElement(By.xpath(properties.getProperty("eve_saved"))).click();
+		Thread.sleep(5000);
+
+}
+
+@Test(priority=3,enabled=true)
+public void eve_schedule() throws InterruptedException {
+
+	WebDriverWait waitschedule=new WebDriverWait(driver,50);
+
+
+
+	WebElement elementschedule=waitschedule.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_schedule"))));
+	elementschedule.click();
+	 	
+	driver.findElement(By.xpath("//*[@id=\"launchTimeInString\"]")).click();
+	Thread.sleep(5000);
+
+	driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/span[35]")).click();
+	
+	Thread.sleep(5000);
+
+	
+	WebElement eveschdrpdwm= driver.findElement(By.xpath("//*[@id=\"countryName\"]"));
+	//.click();
+	Select sdrpdwn=new Select(eveschdrpdwm);
+	sdrpdwn.selectByVisibleText("India");
+	
+	
+		//driver.findElement(By.xpath(properties.getProperty("eve_now"))).click();
+		
+		driver.findElement(By.xpath(properties.getProperty("eve_schlaunch"))).click();
+		Thread.sleep(5000);
+
+		
 		
 }
+
+
 
 }
 
